@@ -1,0 +1,1676 @@
+/* DEBUT DE MON HEADER */
+
+body { 
+  background: #FFFDF6; 
+  font-size: 18px; 
+} 
+
+header { 
+  text-transform: uppercase; 
+  font-weight: bold;
+  height: 120px; 
+  align-items: center; 
+  display:flex; 
+  justify-content: space-between;  
+  background: #CDC093;
+  padding: 20px;
+}
+
+.logo { 
+    width: 150px;
+    margin: 55px;
+} 
+
+.nav-link { 
+  color: #000000; 
+  font-size: 15px; 
+  font-family: cursive; 
+  align-items: center; 
+  display:flex; 
+  justify-content: space-between; 
+}
+
+.nav-link:hover { 
+  color: black; 
+  background: #CDC093; 
+}
+
+.rowHeader{  /* c'est la marge a gauche entre l'icon et les liens de mes pages */
+  display:flex; 
+  justify-content: center; 
+  margin: 65px;
+}
+
+.text-center{ 
+  color: #000000; 
+}
+
+.col-auto2{ 
+  align-items:center; 
+  display:flex; 
+}
+
+.nav-link, .dropdown-item {
+  color: #000000;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: cursive;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+
+.dropdown-item:hover { /* c'est le menu deroulant sa couleur et son fond quand on l'ouvre */
+  color: black;
+  background: #CDC093;
+}
+
+.dropdown-item {
+  color: #000000;
+}
+
+.dropdown-item:hover {
+  color: white;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 3px;
+}
+
+
+/* Media Queries pour responsives  */
+@media (min-width: 320px) and (max-width: 1023px) { 
+
+header {
+    height: 100px;
+}
+
+.logo {
+    margin: 5px;
+    width: 110px;
+}
+
+.rowHeader{  /* c'est la marge a gauche entre l'icon et les liens de mes pages */
+  margin: 10px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 60%;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    background-color: #CDC093;
+    z-index: 10;
+}
+  
+.nav-links.show {
+    display: flex;
+}
+  
+.burger-menu {
+    display: flex;
+    margin: 25px;
+    justify-content: center; 
+}
+}
+
+
+/* Media Queries pour tablettes */
+@media (min-width: 1024px) and (max-width: 1366px) { 
+.logo {
+    margin: 25px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 60%;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    background-color: #CDC093;
+    z-index: 10;
+}
+
+.burger-menu {
+    display: flex;
+    margin: 240px;
+}
+
+.rowHeader {
+    display: flex;
+    margin: 0px;
+}
+}
+
+                                     /* FIN DE MON HEADER */
+
+
+ /* DEBUT DE MON HEADER */                                     
+
+footer { 
+   color: black; 
+   padding-top: 25px;
+   align-items: center; 
+   display: flex; 
+   justify-content: center; 
+   background: #CDC093;
+   font-family: cursive;
+   font-weight: bold; 
+}
+
+h6 {
+  align-items: center;
+  font-size: 20px;
+  color: black;
+  text-decoration: underline;  
+}
+
+.fab {
+    font-size: 30px;
+    margin: 15px;
+
+}
+
+                                 /* FIN DE MON FOOTER */
+
+/* DEBUT DE MA PAGE D'ACCUEIL */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2{
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 55px;
+color: black; 
+padding-top: 40px;
+}
+
+h3{
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 35px;
+color: black; 
+padding-top:40px;
+text-decoration: underline;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+blockquote{
+color: #000000; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+#carouselExampleAutoplaying { 
+  width: 100%; 
+  margin:0; 
+
+}
+
+.mimi{
+  display:flex;
+  justify-content: center;
+  font-size:30px;  
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.btn1 { 
+    display: flex;
+    justify-content: center; 
+    width: 110px;
+    margin-right: 5px;
+    background-color: black;
+    color: white;
+    font-size: 18px; 
+}
+
+.btn1:hover {
+    text-decoration: none;
+    background-color: #CDC093;
+    color: black; 
+}
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote{
+  color: #000000; 
+  font: 18px/1.5 sans-serif; 
+  font-family: cursive; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hr-black{
+  color:black;
+  border-bottom: 2px solid black;
+}
+
+.espace {
+  height: 100px;
+}
+
+.carousel-item img {
+  height: 800px; 
+  width: 100%;
+  object-fit: cover;
+  margin:0;
+}
+
+/* Media queries pour mobiles */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 932px) {
+
+.col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.carousel-item img {
+  height:350px;
+}
+
+h2 {
+  font-size: 35px; 
+}
+
+.btn1 {
+  font-size: 14px;
+}
+
+.espace {
+  height: 50px;
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+                                /* FIN DE MA PAGE D'ACCUEIL */
+
+/* DEBUT DE MA PAGE CATEGORES */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote{
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.hr-black{
+  color:black;
+  border-bottom: 2px solid black;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 100px;   
+}
+
+/* Media queries pour les mobiles */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 932px) {
+
+.col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 16px;
+}
+
+.custom-btn {
+    font-size: 16px;
+}
+}
+
+/* Media queries pour tablettes */
+@media only screen and (min-width: 390px) 
+                   and (max-width: 767px) {
+.col-lg-4 {
+    flex: 0 0 50%;
+}
+
+h1 {
+    font-size: 30px;
+}
+}
+
+
+                                      /* FIN DE MA PAGE CATEGORES */
+
+/* DEBUT DE MA PAGE A PROPOS DE NOUS */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2 {
+    display: flex; 
+    justify-content: center; 
+    font-size:40px;
+}
+
+h3 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:30px;
+    padding-top: 40px; 
+}
+
+h5 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:30px;
+    padding-top: 40px; 
+}
+
+.image-aPropos1 img {
+    width: 800px; 
+    height: 400px;
+}
+
+.image-aPropos2 img {
+    width: 450px; 
+}
+
+.example-wrapper {
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+}
+
+.hr-black {
+    border: none; 
+    height: 1px; 
+    background-color: black; 
+    max-width: 80%; 
+    margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+blockquote {
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hr-black {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.espace {
+  height: 100px;
+}
+
+/* Media queries pour mobile */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 1024px) {
+h1 {
+  font-size: 20px; 
+}
+
+.image-aPropos1 img {
+    width: 320px; 
+    height: 200px;
+}
+
+.image-aPropos2 img {
+    width: 250px; 
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+}
+
+                        /* FIN DE MA PAGE A PROPOS DE NOUS */
+
+/* DEBUT DE MA PAGE FAQ */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2 {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 55px;
+   color: black; 
+   padding-top: 40px;
+}
+
+h5 { 
+    font-size:30px;
+    padding-left: 35px;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.carousel1 img { 
+    height: 550px; 
+    width: 100%;  
+    object-fit: cover; 
+    border-block-end: solid black 1px;
+}
+
+p { 
+    padding-left: 15px;
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+blockquote{
+color: #000000; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 100px;   
+}
+
+
+/* Media queries pour mobiles */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 40px; 
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+                               /* FIN DE MA PAGE FAQ */
+
+ /* DEBUT DE MA PAGE CONTACT */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form{ 
+   width: 800px;
+   height: 950px;
+} 
+
+label {
+color: black;
+}
+
+.rowContact {
+    height: 550px;
+    padding: 80px;
+    border: solid black 1px;
+}
+
+.btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.btn-success {
+   font-size: 25px;
+   margin-top: 35px;
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+blockquote {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.containerContact {
+   display:flex;
+   justify-content: center;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 100px;   
+}
+
+.alert {  /* class pour le message alert de reussite d'envoi */
+  display: flex;
+  position: absolute;
+  top: 260px; 
+  left: 100px;   
+}
+
+/* Media queries pour mobiles */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 912px) {
+
+.containerContact {       
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 22px; 
+}
+
+.espace {
+  height: 50px;   
+}
+
+.rowContact {
+    padding: 40px; /* sa me permet de diminuer ma marge interieur  */
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%; /* mon formulaire prend 100% de ma largeur et si je l'enlève sa depasse de trop la largeur */
+}
+}
+
+                                 /* FIN DE MA PAGE CONTACT */
+
+/* DEBUT DE MA PAGE INSCRIPTION */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form{
+    width: 750px;
+    height: 800px;
+}        
+
+.containerRegister{
+    display: flex;
+    justify-content: center;
+} 
+
+label {
+    color: black;
+}
+
+.rowRegister{
+    width: 850px;
+    padding: 60px;
+    border: solid black 1px;
+}
+
+.btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.btn-success {
+   font-size: 25px;
+}
+
+blockquote{
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.espace {
+   height: 100px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+/* Media Queries pour mobiles et ipad */
+@media (min-width: 320px) and (max-width: 1023px) { 
+    
+h1{
+    font-size: 40px;
+}
+
+form {
+    width: 90%; 
+}
+
+.rowRegister {
+    width: 350px;
+}
+
+.custom-btn {
+    width: 150px;
+}
+
+.espace {
+   height: 50px;
+}
+}
+
+                           /* FIN DE MA PAGE INSCRIPTION */
+
+
+/* DEBUT DE MA PAGE CONNEXION */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form {
+   width: 650px;
+   height: 750px;
+}  
+
+.containerLogin {
+    display:flex;
+    justify-content: center;
+}
+
+.custom-btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+label {
+color: black; 
+}
+
+.rowConnexion {
+    padding: 75px;
+    border: solid black 1px;
+    height: 450px;
+}
+
+.espace {
+   height: 150px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+/* Media query pour les mobiles */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 767px) {
+
+h1 {
+    font-size: 40px; 
+    padding-top: 20px; 
+}
+
+.espace {
+   height: 50px;
+}
+
+form {
+    width: 100%; 
+}
+
+.btn-primary { /* une marge en haut du bouton pour le faire descendre */
+    margin-top: 20px;   
+}
+
+.rowConnexion{
+    width: 300px;
+}
+}
+
+@media only screen and (min-width: 1024px) 
+                   and (max-width: 1367px) {
+
+.btn-primary { /* une marge en haut du bouton pour le faire descendre */
+    margin-top: 30px;   
+}
+}
+
+                                    /* FIN DE MA PAGE CONNEXION */
+
+
+ /* DEBUT DE MA PAGE PANIER */
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.containerPanier {
+    display: flex;
+    justify-content: center;
+} 
+
+.rowPanier {
+    border: solid black 10px;
+    height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tr {
+  font-size: 30px;
+}
+
+.card-img-top { /* taille de l'image de ma cards dans le panier */
+   height: auto; 
+   width: 150px; 
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+blockquote {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 15px auto;
+    height: 40px; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+label {
+color: black;
+}
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 150px;   
+}
+
+/* Media Queries pour mobiles */
+@media (min-width: 320px) and (max-width: 932px) {
+
+h1 {
+   font-size: 35px; 
+}
+
+h6{
+  font-size: 20px;
+}
+
+.rowPanier {
+    width: 380px;
+    height: auto;
+}
+
+th {
+    font-size: 8px; /* taille des titres de mon tableau */
+}
+
+td {
+    font-size: 7px; /* taille du contenu de mon tableau */
+}
+
+.card-img-top {   
+   font-size: 12px; /* taille de l'image de ma cards dans le panier */
+   height: auto; 
+   width: 30px; 
+}
+
+.custom-btn { 
+    width: 155px;
+    font-size: 10px;
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+
+/* Media Queries pour tablettes */
+@media (min-width: 1024px) and (max-width: 1036px) {
+
+td {
+    font-size: 24px; /* taille des titres de mon tableau */
+}
+}
+
+                             /* FIN DE MA PAGE PANIER */
+
+
+/* DEBUT DE MA PAGE ORDER COMMANDE  */
+
+h1 {
+    font-family: cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    padding-top: 40px;
+    color: black;
+    letter-spacing: 2px;
+ }
+ 
+ h6 {
+   font-weight: bold;
+   font-size: 25px;
+   text-decoration: underline;
+ }
+ 
+ .rowOrder {
+    display: flex;
+    justify-content: space-around;
+    border: solid black 5px;
+    height: 750px;
+ }
+ 
+ .section-margin {
+    margin-bottom: 0; 
+ }
+ 
+ .hr-black {
+    border: none; 
+    height: 1px; 
+    background-color: black; 
+    max-width: 80%; 
+    margin: 10px auto;
+ }
+ 
+ blockquote {
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .custom-btn {
+     display: flex;
+     justify-content: center; 
+     align-items: center; 
+     width: 300px;
+     background-color: black;
+     color: #ffffff;
+     font-size: 20px;
+     margin: 0 auto; 
+ }
+ 
+ .custom-btn:hover {
+     background-color: #CDC093;
+     border-color: black; 
+     color: black; 
+ } 
+ 
+ .imageStripe {
+   width: 400px;
+ }
+ 
+ .livraison {
+   display: flex;
+   justify-content: space-around;
+ }
+ 
+ .stripe, .envoi, .livraison {
+   text-align: center;
+   font-weight: bold;
+   font-size: 60px;
+   color: black;
+ }
+ 
+ .jour {
+   text-align: center;
+   font-size:18px;
+ }
+ 
+ .espace {
+     height: 100px;
+ }
+ 
+ .espace2 {
+     height: 100px;
+ }
+ 
+ /* Media query pour les mobiles jusq'au tablettes */
+ @media (min-width: 320px) and (max-width: 932px){
+ 
+ h1 {
+   font-size: 22px; 
+ }
+ 
+ .rowOrder {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .imageStripe {
+   width: 200px;
+ }
+ 
+ a.btn { /* boutton valider la commande */
+     margin: 35px;
+ }
+ 
+ h6{
+   font-size: 20px;
+ }
+ 
+ .jour {
+   font-size: 10px;
+ }
+ }
+ 
+ /* Media query pour les mobiles jusq'au tablettes */
+ @media (min-width: 933px) and (max-width:1366px){
+ .rowOrder {
+    height: auto;
+ }
+ }
+
+                    /* FIN DE MA PAGE ORDER COMMANDE  */
+
+
+/* DEBUT DE MA PAGE STRIPE */
+
+.carousel1 img { 
+    height: 550px; 
+    width: 100%;  
+    object-fit: cover; 
+    border-block-end: solid black 1px;
+}
+
+h3{
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 35px;
+color: black; 
+padding-top:40px;
+text-decoration: underline;
+}
+
+.rowStripe {
+    display: flex;
+    justify-content: center;
+}
+
+.ReferenceStripe {
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    border: solid #CDC093 10px;
+    height: 150px;
+    padding: 45px;
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote{
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.espace {
+   height: 100px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+                              /* FIN DE MA PAGE STRIPE */
+
+
+ /* DEBUT DE MA PAGE MENTIONS LEGALES */
+
+.carousel1 img {
+   height: 550px; width: 100%;  
+   object-fit: cover; 
+   border-block-end: solid black 1px;
+}
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: underline; 
+    color: black;
+}
+
+h5 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:20px;
+}
+
+.containerMentionsLegales {
+   padding: 45px;
+}
+
+p {
+   color: black;
+}
+
+.espace {
+   height: 150px;
+}
+
+/* Media queries pour les écrans d'iPhone */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 25px; /* Taille de la police pour les écrans d'iPhone */
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+
+.espace {
+   height: 50px;
+}
+}
+
+/* Media queries pour les tablettes */
+@media only screen and (min-device-width: 768px) 
+                  and (max-device-width: 1024px) {
+h1 {
+   font-size: 30px; /* Taille de la police pour les tablettes */
+}
+}
+
+                                  /* FIN DE MA PAGE MENTIONS LEGALES */
+
+
+  /* DEBUT DE MA PAGE CGV */
+
+.carousel1 img {
+   height: 550px; width: 100%;  
+   object-fit: cover; 
+   border-block-end: solid black 1px;
+}
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: underline; 
+    color: black;
+}
+
+.containerCgv {
+   padding: 45px;
+}
+
+p {
+   color: black;
+}
+
+.espace2 {
+  height: 150px;   
+}
+
+
+/* Media queries pour mobile */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 30px; 
+}
+.carousel1 img {
+   height: 250px; 
+}
+}
+
+/* Media queries pour tablettes */
+@media only screen and (min-device-width: 768px) 
+                  and (max-device-width: 1024px) {
+h1 {
+   font-size: 30px; 
+}
+}
+
+                                      /* FIN DE MA PAGE CGV */
+
+
+/* DEBUT DE MA PAGE POLITIQUES DE CONFIDENTIALITES */
+
+.carousel1 img {
+   height: 550px; width: 100%;  
+   object-fit: cover; 
+   border-block-end: solid black 1px;
+}
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 60px;
+   padding-top: 20px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: underline; 
+    color: black;
+}
+
+h5 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:20px;
+}
+
+.containerPolitiqueConfi {
+   padding: 45px;
+}
+
+p {
+   color: black;
+}
+
+.espace {
+   height: 150px;
+}
+
+/* Media queries pour les mobiles */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+ h1 {
+   font-size: 30px; 
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+
+.espace {
+   height: 50px;
+}
+}
+
+/* Media queries pour tablettes */
+@media only screen and (min-device-width: 768px) 
+                   and (max-device-width: 1024px) {
+h1 {
+   font-size: 30px; 
+}
+}
+
+                     /* FIN DE MA PAGE POLITIQUES DE CONFIDENTIALITES */

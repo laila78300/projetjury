@@ -1,0 +1,243 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} FAQ {% endblock %}
+
+{% block body %}
+
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2 {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 55px;
+   color: black; 
+   padding-top: 40px;
+}
+
+h5 { 
+    font-size:30px;
+    padding-left: 35px;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.carousel1 img { 
+    height: 550px; 
+    width: 100%;  
+    object-fit: cover; 
+    border-block-end: solid black 1px;
+}
+
+p { 
+    padding-left: 15px;
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+blockquote{
+color: #000000; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 100px;   
+}
+
+
+/* Media queries pour mobiles */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 40px; 
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+</style>
+
+   <div class="carousel1">
+         <img src="{{ asset('images/banniere2.jpg')}}" alt="#">
+   </div>
+
+ 
+<h1>F.A.Q</h1>
+<br><br><br>
+
+  <h5> 1. Quels types de produits proposez-vous chez Bella Vente ? </h5>
+    <p>Chez Bella Vente, nous proposons une large gamme de bijoux, y compris des colliers, bagues, bracelets et boucles d'oreilles.
+<br>
+Notre collection est constamment mise à jour pour offrir les dernières tendances et styles.</p>
+<br>
+
+  <h5>2. Quels matériaux sont utilisés dans vos bijoux ?</h5>
+    <p>Nous utilisons une variété de matériaux de haute qualité pour nos bijoux, y compris l'acier inoxydable, l'argent sterling, les cristaux et d'autres métaux précieux et semi-précieux<br>
+      Chaque pièce est sélectionnée avec soin pour assurer durabilité et élégance.</p>
+<br>
+
+  <h5>3. Combien de temps faut-il pour que ma commande soit expédiée ?</h5>
+    <p>Nous nous efforçons de traiter et d'expédier toutes les commandes dans un délai 
+    de 2 à 4 jours ouvrables à compter de la date de votre commande. 
+    <br>
+    Vous recevrez une notification par e-mail dès que votre commande aura été expédiée.</p>
+    <br>
+
+  <h5>4. Quelles sont les options de livraison disponibles ?</h5>
+    <p>Nous proposons une livraison standard via Colissimo pour un tarif fixe de 6 euros.
+    <br>
+    Cette méthode de livraison garantit une livraison sécurisée et traçable de 
+    votre commande.</p>
+    <br>
+
+  <h5>5. Livrez-vous à l'international ?</h5>
+    <p>Actuellement, nous ne livrons qu'en France métropolitaine. Cependant, nous 
+    envisageons d'étendre nos services à d'autres pays à l'avenir.</p>
+    <br>
+
+  <h5>6. Puis-je modifier ma commande après l'avoir passée ?</h5>
+    <p>Malheureusement, une fois votre commande passée, il peut être difficile de 
+    la modifier en raison de notre processus de traitement rapide.
+    <br>
+    Nous vous recommandons donc de vérifier attentivement votre commande avant 
+    de finaliser votre achat.
+    <br> 
+    Si vous avez des questions ou des préoccupations, 
+    veuillez nous contacter dès que possible et nous ferons de notre mieux pour 
+    vous aider.</p>
+    <br>
+
+  <h5>7. Proposez-vous des options de retour ou d'échange ?</h5>
+    <p>Oui, nous proposons des retours et des échanges dans les 14 jours suivant la réception de votre commande.
+    <br> 
+    Pour plus d'informations sur notre politique de retour, veuillez consulter notre page dédiée aux retours et échanges sur notre site Web.</p>
+    <br>
+
+  <h5>8. Comment puis-je contacter le service clientèle de Bella Vente ?</h5>
+    <p>Pour toute question, préoccupation ou assistance supplémentaire, n'hésitez pas à contacter notre équipe du service clientèle par e-mail à contact@bellavente.com.<br>
+    Nous nous efforçons de répondre à toutes les demandes dans les plus brefs délais.</p>
+    <br>
+
+
+<section class="espace2"></section>
+<hr class="hr-black"/>
+
+  <div class="livraison">
+      <div class="envoi">
+          <h6>LIVRAISON</h6>
+              <p class="jour">Toutes les commandes sont expédiées <br> entre 2 à 4 jours.</p>
+                <i class="fa fa-truck fa-lg"></i>
+      </div>
+      <div class="stripe">
+          <h6>PAIEMENT</h6>
+             <p class="jour">Nous acceptons tous les paiements <br> par carte.</p>
+               <i class="fa fa-credit-card fa-lg"></i>
+      </div>
+          <div class="stripe">
+            <h6>RETOUR</h6>
+             <p class="jour">Vous avez jusqu'à 14 jours <br> pour faire un retour. </p>
+               <i class="fa fa-arrow-left fa-lg"></i>
+      </div>
+
+  </div>
+  
+<br>
+<hr class="hr-black"/><br><br>
+
+    <div class"connection">
+      <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.
+      <br> 
+      Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.
+      <br> 
+      L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+      </blockquote>
+      <br>
+
+          <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+      </div>
+
+<section class="espace2"></section>
+
+
+{% endblock %}
+

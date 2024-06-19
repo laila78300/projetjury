@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}C.G.V{% endblock %}
+
+
+{% block body %}
+
+<style>
+
+.carousel1 img {
+   height: 550px; width: 100%;  
+   object-fit: cover; 
+   border-block-end: solid black 1px;
+}
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: underline; 
+    color: black;
+}
+
+.containerCgv {
+   padding: 45px;
+}
+
+p {
+   color: black;
+}
+
+.espace2 {
+  height: 150px;   
+}
+
+
+/* Media queries pour mobile */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 30px; 
+}
+.carousel1 img {
+   height: 250px; 
+}
+}
+
+/* Media queries pour tablettes */
+@media only screen and (min-device-width: 768px) 
+                  and (max-device-width: 1024px) {
+h1 {
+   font-size: 30px; 
+}
+}
+
+</style>
+
+   <div class="carousel1">
+         <img src="{{ asset('images/fond.jpg')}}" alt="#">
+   </div>
+
+   <h1>Conditions Générale De Vente </h1>
+<br><br><br>
+
+<section class="containerCgv">
+
+      <p>Nous voulons vous informer que malgré notre professionnalisme il est possible d'avoir un défaut de fabrication que nous avons
+   manqué lors de l'acceptation des produits dans notre entrepôt, produit défectueux ou une erreur dans la préparation de la commande.
+   Si le produit reçu ne répond pas à vos attentes, si vous n'êtes pas satisfait de votre choix ou s'il y a un défaut, vous pourriez
+   effectuer un retour ou un échange.</p>
+
+      <p>Nous sommes toujours ouverts à une bonne coopération avec tous nos clients. Avec nous, il est possible de vous rétracter de votre
+   contrat d’achat sans présenter de motif, mais nous serions très reconnaissants si vous indiquez la raison de votre décision, car
+   votre avis nous aide à améliorer constamment nos services pour que vous vous sentiez à l'aise avec nous!</p>
+
+      <p>Vous disposez d’un délai de 14 jours, à compter de la date de réception de votre colis pour exercer votre droit de rétractation.</p>
+
+      <p>Contactez notre service client pour rendre le retour ou l'échange facile en nous envoyant des photos du produit directement à
+   l'adresse mail: lailajilali@gmail.com.<p>
+
+      <p>Le produit que vous voulez retourner doit être non ouvert, non abîmé et avoir un emballage original non descellé.
+   Nous vous recommandons de retourner le produit dans son emballage de transport. Une étiquette de retour vous sera fournie.
+   Si vous ne disposez pas d'emballage de transport, vous pouvez utiliser tout autre emballage en carton qui pourrait être transporté.
+   Assurez-vous que le produit emballé est soigné et sécurisé. Veuillez noter que les images des marchandises sur le site sont illustratives
+   et ne constituent pas une représentation des propriétés des marchandises (par exemple, l'emballage des marchandises peut différer
+   en raison d'un changement d'emballage par le fabricant).</p>
+   <br>
+
+   <h3> 2. Raisons du retour et de l'échange:</h3>
+   <br>
+      <p>En cas d’un produit en mauvais état ou endommagé pendant le transport?</p>
+      <p>Malgré tous nos efforts, un souci pendant le transport est possible, ce que nous regrettons vivement. Vous devez nous contacter
+   dans un délai de 7 jours (dès la réception de la commande) et nous expliquer les détails! Nous allons traiter votre demande au plus vite.
+   Vous devez nous fournir les documents suivants :</p>
+
+   - La totalité de la taille/extérieur du colis où l'étiquette du colis est visible.
+
+   - Un emballage ouvert où le contenu et l'emballage intérieur sont clairement visibles.
+
+   - Tous les types d'emballages intérieurs que vous trouverez dans l'emballage.
+
+   - L'ensemble du champ d'application de l'article.
+
+   - Une photo détaillée/un gros plan des dommages concrets de l'article.
+
+      <p>Au-delà de ces 7 jours, la réclamation sera rejetée par notre département concerné ainsi que par le service DPD.</p>
+      <p>Pour toute question ou information, concernant les points cités ou autres,
+   veuillez nous contacter à notre e-mail adresse lailajilali@gmail.com ou par téléphone 06 66 55 92 48.</p>
+   <br>
+   
+   <h3> 3. Comment effectuer un remboursement?</h3>
+   <br>
+      <p>Pour le remboursement, nous utilisons le même mode de paiement qui est utilisé dans la transaction initiale.</p>
+      <p>Si vous recevez une réduction, un certificat ou un cadeau pour la prochaine commande, cela sera enregistré dans votre compte
+   et déduit automatiquement lors de la validation de votre panier.</p>
+
+</section>
+
+
+<section class="espace2"> </section>
+
+{% endblock %}
+

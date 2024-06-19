@@ -1,0 +1,20 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app_register:
+    path: '/register'
+    controller: 'App\Controller\RegistrationController::register'
+    methods: ['GET', 'POST']
+
+contact:
+    path: /contact
+    controller: 'App\Controller\ContactController::index'
+
+app_stripe:
+    path: /stripe/checkout/session
+    controller: 'App\Controller\StripeController::checkoutSession'
+
+

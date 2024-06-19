@@ -1,0 +1,273 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<body>
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2{
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 55px;
+color: black; 
+padding-top: 40px;
+}
+
+h3{
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 35px;
+color: black; 
+padding-top:40px;
+text-decoration: underline;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+blockquote{
+color: #000000; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+#carouselExampleAutoplaying { 
+  width: 100%; 
+  margin:0; 
+
+}
+
+.mimi{
+  display:flex;
+  justify-content: center;
+  font-size:30px;  
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.btn1 { 
+    display: flex;
+    justify-content: center; 
+    width: 110px;
+    margin-right: 5px;
+    background-color: black;
+    color: white;
+    font-size: 18px; 
+}
+
+.btn1:hover {
+    text-decoration: none;
+    background-color: #CDC093;
+    color: black; 
+}
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote{
+  color: #000000; 
+  font: 18px/1.5 sans-serif; 
+  font-family: cursive; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hr-black{
+  color:black;
+  border-bottom: 2px solid black;
+}
+
+.espace {
+  height: 100px;
+}
+
+.carousel-item img {
+  height: 800px; 
+  width: 100%;
+  object-fit: cover;
+  margin:0;
+}
+
+/* Media queries pour mobiles */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 932px) {
+
+.col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.carousel-item img {
+  height:350px;
+}
+
+h2 {
+  font-size: 35px; 
+}
+
+.btn1 {
+  font-size: 14px;
+}
+
+.espace {
+  height: 50px;
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+</style>
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{ asset('images/bras.jpg')}}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ asset('images/bagueporte.jpg')}}" alt="Second slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+    <h2>L'Innovation et la Qualité</h2>
+
+      <blockquote>Les avancées technologiques et les tendances du marché ont conduit à la création de produits de pointe et de nuances à la pointe des tendances, offrant une qualité exceptionnelle à chaque utilisation.<br> Ces innovations répondent aux besoins changeants 
+      des consommateurs et garantissent une expérience utilisateur optimale, consolidant ainsi la position des marques dans un marché concurrentiel.</blockquote>
+      <br>
+      </blockquote>
+
+
+        <h3>Notre Sélection</h3>
+
+<section class="espace"></section>
+
+  <div class="container"> 
+    <div class="row">
+        {% for produit in produits %}  {# j'appel grâce à une boule for tout mes produits dans produit #} 
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ asset('images/produits/' ~ produit.image) }}" class="card-img-top" alt="{{ produit.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center" style="font-weight: bold; font-size: 20px;">{{ produit.subtitle }}</h5>
+                        <p class="card-text text-center">{{ produit.slug|striptags }}</p>
+                        <p class="card-text text-center" style="font-weight: bold;">{{ produit.price }} €</p>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a href="{{ path('app_produits_show', {'id': produit.id}) }}" class="btn1 btn-sm btn-outline-secondary">Voir</a>
+                            <a href="{{ path('app_panier_id', {'id': produit.id}) }}" class="btn1 btn-sm btn-outline-secondary">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+
+
+<section class="espace"></section>
+<hr class="hr-black"/>
+
+        <div class="livraison">
+            <div class="envoi">
+                <h6>LIVRAISON</h6>
+                <p class="jour">Toutes les commandes sont expédiées <br> entre 2 à 4 jours.</p>
+                <i class="fa fa-truck fa-lg"></i>
+            </div>
+            <div class="stripe">
+                <h6>PAIEMENT</h6>
+                <p class="jour">Nous acceptons tous les paiements <br> par carte.</p>
+                <i class="fa fa-credit-card fa-lg"></i>
+            </div>
+                <div class="stripe">
+                <h6>RETOUR</h6>
+                <p class="jour">Vous avez jusqu'à 14 jours <br> pour faire un retour. </p>
+                <i class="fa fa-arrow-left fa-lg"></i>
+            </div>
+        </div>
+
+<br>
+<hr class="hr-black"/><br><br>
+
+              <div class"connection">
+                <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.<br> 
+                Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.<br> 
+                L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+                </blockquote><br>
+
+                    <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+              </div>
+
+<section class="espace"></section>
+
+
+{% endblock %}

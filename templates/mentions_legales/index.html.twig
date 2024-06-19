@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique De Confidentialités {% endblock %}
+
+{% block body %}
+
+<style>
+
+.carousel1 img {
+   height: 550px; width: 100%;  
+   object-fit: cover; 
+   border-block-end: solid black 1px;
+}
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: underline; 
+    color: black;
+}
+
+h5 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:20px;
+}
+
+.containerMentionsLegales {
+   padding: 45px;
+}
+
+p {
+   color: black;
+}
+
+.espace {
+   height: 150px;
+}
+
+/* Media queries pour les écrans d'iPhone */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 812px) {
+h1 {
+   font-size: 25px; /* Taille de la police pour les écrans d'iPhone */
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+
+.espace {
+   height: 50px;
+}
+}
+
+/* Media queries pour les tablettes */
+@media only screen and (min-device-width: 768px) 
+                  and (max-device-width: 1024px) {
+h1 {
+   font-size: 30px; /* Taille de la police pour les tablettes */
+}
+}
+
+</style>
+
+   <div class="carousel1">
+         <img src="{{ asset('images/banniere1.jpg')}}" alt="#">
+   </div>
+
+   <h1> Les Mentions légales</h1>
+<br><br><br>
+
+   <section class="containerMentionsLegales">
+
+      <h5>Merci de votre intérêt pour notre site web. </h5>
+      <br>
+      <h5>La protection de votre vie privée est importante pour nous. Vous trouverez ci-dessous des informations détaillées sur la manière 
+      dont nous traitons vos données.</h5><br><br>
+
+      <h3>1. Collecte et utilisation des données personnelles</h3>
+      <br>
+         <p>Nous ne collectons pas de données personnelles sur notre site web sans votre consentement explicite. 
+         Si vous choisissez de nous fournir des données personnelles (par exemple, en remplissant un formulaire de contact ou en passant une commande), nous les utiliserons uniquement dans 
+         le cadre spécifié et ne les transmettrons à des tiers qu'avec votre consentement exprès.</p>
+
+      <h3>2. Sécurité des données</h3>
+      <br>
+         <p>Nous prenons des mesures de sécurité techniques et organisationnelles pour protéger vos données contre toute manipulation accidentelle ou intentionnelle, perte partielle ou totale, 
+         destruction ou accès non autorisé par des tiers. Nos mesures de sécurité sont continuellement améliorées en fonction des développements technologiques.</p>
+
+      <h3>3. Cookies</h3>
+      <br>
+         <p>Notre site web utilise des cookies. Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil et qui permettent d'analyser l'utilisation du site web. Les cookies 
+         ne contiennent pas de virus et ne causent aucun dommage à votre appareil. 
+         Vous pouvez configurer votre navigateur pour qu'il vous informe de l'utilisation des cookies et les autoriser uniquement dans des cas individuels, exclure l'acceptation des cookies 
+         dans certains cas ou en général, ainsi que activer la suppression automatique des cookies à la fermeture du navigateur. La désactivation des cookies peut limiter les fonctionnalités 
+         de notre site web.</p>
+
+      <h3>4. Analyse Web</h3>
+      <br>
+         <p>Notre site web utilise des fonctions du service d'analyse Web Google Analytics. Les informations générées par les cookies concernant votre utilisation de ce site web sont généralement 
+         transmises à un serveur de Google aux États-Unis et y sont stockées. Vous pouvez empêcher la collecte de données générées par les cookies et liées à votre utilisation 
+         du site web (y compris votre adresse IP) à Google, ainsi que le traitement de ces données par Google, en téléchargeant et en installant le plugin de navigateur 
+         disponible sur le lien suivant : http://tools.google.com/dlpage/gaoptout?hl=en.</p>
+
+      <h3>5. Droits de l'utilisateur</h3>
+      <br>
+         <p>En tant qu'utilisateur de notre site web, vous avez le droit de demander des informations sur les données stockées vous concernant, leur origine et leurs destinataires, ainsi que sur 
+         la finalité du traitement des données. De plus, vous avez le droit de rectifier, bloquer ou supprimer ces données. Vous pouvez nous contacter à tout moment à l'adresse indiquée 
+         dans les mentions légales si vous avez d'autres questions sur la protection des données.</p>
+
+      <h3>6. Modifications de la politique de confidentialité</h3>
+      <br>
+         <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment en conformité avec les dispositions légales en vigueur. La version actuelle publiée 
+         sur notre site web s'applique.</p>
+
+
+      <section  class="espace"></section>
+
+      <h5>Si vous avez des questions sur notre politique de confidentialité </h5>
+      <h5>Dernière mise à jour : 04/2024</h5>
+
+   </section>
+
+
+{% endblock %}
+

@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form {
+   width: 650px;
+   height: 750px;
+}  
+
+.containerLogin {
+    display:flex;
+    justify-content: center;
+}
+
+.custom-btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+label {
+color: black; 
+}
+
+.rowConnexion {
+    padding: 75px;
+    border: solid black 1px;
+    height: 450px;
+}
+
+.espace {
+   height: 150px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+/* Media query pour les mobiles */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 767px) {
+
+h1 {
+    font-size: 40px; 
+    padding-top: 20px; 
+}
+
+.espace {
+   height: 50px;
+}
+
+form {
+    width: 100%; 
+}
+
+.btn-primary { /* une marge en haut du bouton pour le faire descendre */
+    margin-top: 20px;   
+}
+
+.rowConnexion{
+    width: 300px;
+}
+}
+
+@media only screen and (min-width: 1024px) 
+                   and (max-width: 1367px) {
+
+.btn-primary { /* une marge en haut du bouton pour le faire descendre */
+    margin-top: 30px;   
+}
+}
+
+</style>
+
+
+<h1>Connexion</h1>
+<section class="espace"></section>
+
+    <section class="containerLogin my-3">
+        <div class="rowConnexion">
+            <div class="col">
+                <form method="post">
+                {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>          
+                {% endif %}
+
+                     {% if app.user %}
+                        <div class="mb-3">
+                           Vous êtes connecté en tant que  {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                        </div>
+                    {% endif %}
+                
+                    <label for="inputEmail">Email</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                           <label for="inputPassword">Mot de Passe</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                        <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
+                            <button class="btn btn-lg btn-primary" type="submit">
+                                Se connecter
+                            </button>
+                </form>
+            </div>
+       </div>
+    </section>
+
+<section class="espace2"></section>
+
+
+{% endblock %}

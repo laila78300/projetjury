@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement Stripe{% endblock %}
+
+{% block body %}
+
+<style>
+
+.carousel1 img { 
+    height: 550px; 
+    width: 100%;  
+    object-fit: cover; 
+    border-block-end: solid black 1px;
+}
+
+h3{
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-size: 35px;
+color: black; 
+padding-top:40px;
+text-decoration: underline;
+}
+
+.rowStripe {
+    display: flex;
+    justify-content: center;
+}
+
+.ReferenceStripe {
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    border: solid #CDC093 10px;
+    height: 150px;
+    padding: 45px;
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote{
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.espace {
+   height: 100px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+</style>
+
+   <div class="carousel1">
+         <img src="{{ asset('images/banniereMerci.jpg')}}" alt="#">
+   </div>
+
+{# c'est mon message de succes que j'ai mis dans le controller stripe et que voici #}
+{% if successMessage is defined %}
+    <h3>{{ successMessage }}</h3>
+{% endif %}
+  
+<section class="espace"></section>
+
+   <section class= "rowStripe"> 
+     <div class="ReferenceStripe">
+        <p>Voici vôtre numéro de suivi : <strong> {{ reference }} </strong></p>
+     </div>
+   </section>
+
+   <section class="espace2"></section>
+    <hr class="hr-black"/>
+
+    <div class="livraison">
+        <div class="envoi">
+            <h6>LIVRAISON</h6>
+            <p class="jour">Toutes les commandes sont expédiées <br> entre 2 à 4 jours.</p>
+            <i class="fa fa-truck fa-lg"></i>
+        </div>
+        <div class="stripe">
+            <h6>PAIEMENT</h6>
+            <p class="jour">Nous acceptons tous les paiements <br> par carte.</p>
+            <i class="fa fa-credit-card fa-lg"></i>
+        </div>
+            <div class="stripe">
+            <h6>RETOUR</h6>
+            <p class="jour">Vous avez jusqu'à 14 jours <br> pour faire un retour. </p>
+            <i class="fa fa-arrow-left fa-lg"></i>
+        </div>
+
+    </div>
+
+<br>
+<hr class="hr-black"/><br><br>
+
+      <div class="connection">
+        <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.<br> 
+      Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.<br> 
+      L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+        </blockquote><br>
+            <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+</div>
+
+<section class="espace"></section>
+
+{% block javascripts %}
+        <script async src="https://js.stripe.com/v3"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% endblock %}
+
+

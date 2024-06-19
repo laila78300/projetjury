@@ -1,0 +1,193 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form{ 
+   width: 800px;
+   height: 950px;
+} 
+
+label {
+color: black;
+}
+
+.rowContact {
+    height: 550px;
+    padding: 80px;
+    border: solid black 1px;
+}
+
+.btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.btn-success {
+   font-size: 25px;
+   margin-top: 35px;
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+blockquote {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.containerContact {
+   display:flex;
+   justify-content: center;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 100px;   
+}
+
+.alert {  /* class pour le message alert de reussite d'envoi */
+  display: flex;
+  position: absolute;
+  top: 260px; 
+  left: 100px;   
+}
+
+/* Media queries pour mobiles */
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 912px) {
+
+.containerContact {       
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 22px; 
+}
+
+.espace {
+  height: 50px;   
+}
+
+.rowContact {
+    padding: 40px; /* sa me permet de diminuer ma marge interieur  */
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%; /* mon formulaire prend 100% de ma largeur et si je l'enlève sa depasse de trop la largeur */
+}
+}
+
+</style>
+
+
+<h1>Formulaire de Contact</h1>
+<section class="espace"></section>
+
+   <section class="containerContact my-3">
+      <div class="rowContact">
+      {# mon formulaire et d'ecris dans mon controller et a était créer dans mon Form ContactType grace a ma variable form rappeler #}
+
+         <div class="col">
+               {{ form_start(form) }}
+               {{ form(form) }}
+               {{ form_end(form) }}
+         
+         {# C'est une condition pour que si mon message est bien envoyé mon user reçois un message de confirmation que j'aimis dansm on controller contact #}
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            
+         </div>
+      </div>
+   </section>
+
+
+<section class="espace2"> </section>
+<hr class="hr-black"/>
+
+<br>
+<br>
+
+   <div class"connection">
+       <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.<br> 
+   Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.<br> 
+   L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+       </blockquote><br>
+
+          <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+   </div>
+
+<section class="espace2"></section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+   
+
+{% endblock %}

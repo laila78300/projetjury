@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}A propos de nous{% endblock %}
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h2 {
+    display: flex; 
+    justify-content: center; 
+    font-size:40px;
+}
+
+h3 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:30px;
+    padding-top: 40px; 
+}
+
+h5 { 
+    display: flex; 
+    justify-content: center; 
+    font-size:30px;
+    padding-top: 40px; 
+}
+
+.image-aPropos1 img {
+    width: 800px; 
+    height: 400px;
+}
+
+.image-aPropos2 img {
+    width: 450px; 
+}
+
+.example-wrapper {
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+}
+
+.hr-black {
+    border: none; 
+    height: 1px; 
+    background-color: black; 
+    max-width: 80%; 
+    margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+blockquote {
+    color: #000000; 
+    font: 18px/1.5 sans-serif; 
+    font-family: cursive; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hr-black {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.espace {
+  height: 100px;
+}
+
+/* Media queries pour mobile */
+@media only screen and (min-width: 320px) 
+                   and (max-width: 1024px) {
+h1 {
+  font-size: 20px; 
+}
+
+.image-aPropos1 img {
+    width: 320px; 
+    height: 200px;
+}
+
+.image-aPropos2 img {
+    width: 250px; 
+}
+
+.carousel1 img {
+   height: 250px; 
+}
+}
+
+</style>
+
+<h1>Bienvenue chez BELLA</h1><br>
+
+    <div class="example-wrapper">
+              <h2>Notre Histoire</h2>
+<br><br>
+        <div class="image-aPropos1">
+            <img class="fit-picture" src="{{ asset('images/bijoux.jpg')}}" alt="#">
+        </div>
+<br>
+            <p>Fondée avec passion et dévotion pour l'expression de soi à travers les bijoux, notre entreprise est née de l'idée de rendre la beauté plus accessible et durable. 
+<br>Depuis 2024, nous nous engageons à offrir des produits de qualité qui célèbrent la confiance et l'individualité.</p><br>
+
+<hr class="hr-black"/>
+
+   <h5>Notre Mission</h5>
+<br>
+        <div class="image-aPropos2">
+            <img class="fit-picture" src="{{ asset('images/bracelet.jpg')}}" alt="#">
+        </div><br>
+            <p>Chez BELLA, notre mission est simple : vous aider à révéler votre véritable éclat. Nous croyons que les bijoux ne devraient pas seulement être beaux, mais aussi fiables. 
+            <br>C'est pourquoi tous nos produits sont méticuleusement conçus pour durer, vous permettant de briller du matin jusqu'au soir, peu importe où vous allez.</p><br>
+<hr class="hr-black"/>
+
+    <h5>Notre Gamme de Produits</h5>
+<br>
+        <div class="image-aPropos2">
+            <img width="450px" class="fit-picture" src="{{ asset('images/bague.jpg')}}" alt="#">
+        </div><br>
+            <p>Découvrez notre vaste collection de bijoux, spécialement formulée pour vous offrir des looks éblouissants qui durent. <br>De nos colliers hautement stylés à nos bracelets 
+            révolutionnaires, chacun de nos produits est conçu pour vous accompagner tout au long de votre journée, résistant à l'épreuve du temps.</p><br>
+<hr class="hr-black"/>
+
+    <h5>L'Innovation et la Qualité</h5>
+<br>
+        <div class="image-aPropos2">
+            <img width="450px" class="fit-picture" src="{{ asset('images/bagueporte.jpg')}}" alt="#"> 
+        </div><br>
+        <p>Pour vous présenter des produits de pointe et des nuances à la pointe des tendances, garantissant une qualité exceptionnelle à chaque utilisation.</p><br>
+<hr class="hr-black"/>
+
+    <h5>Engagement envers la Durabilité</h5>
+<br>
+        <div class="image-aPropos2">
+          <img width="450px" class="fit-picture" src="{{ asset('images/bras.jpg')}}" alt="#">
+        </div><br>
+          <p>Nous nous engageons à réduire notre empreinte environnementale. <br>Nous nous efforçons continuellement de développer des produits respectueux de l'environnement, tout 
+        en nous assurant que nos emballages sont recyclables et durables.</p>
+<br>
+<hr class="hr-black"/>
+
+    <h5>Rejoignez-nous dans notre Voyage</h5>
+<br>
+        <p>Nous vous invitons à explorer notre collection et à faire partie de notre communauté.<br> Rejoignez-nous dans notre voyage pour redéfinir la beauté et l'assurance à travers 
+        des accessoires qui vous accompagnent du lever au coucher du soleil.</p>
+<br><br><br>    
+            <h6><strong>Chez BELLA, votre beauté est notre passion.</strong></h6><br>
+    </div>
+<br>
+
+<section class="espace"></section>
+
+
+{% endblock %}

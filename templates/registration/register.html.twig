@@ -1,0 +1,147 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+form{
+    width: 750px;
+    height: 800px;
+}        
+
+.containerRegister{
+    display: flex;
+    justify-content: center;
+} 
+
+label {
+    color: black;
+}
+
+.rowRegister{
+    width: 850px;
+    padding: 60px;
+    border: solid black 1px;
+}
+
+.btn {
+    background-color:black;
+    border-color: black; 
+    color: #ffffff; 
+}
+
+.btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+}
+
+.btn-success {
+   font-size: 25px;
+}
+
+blockquote{
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.espace {
+   height: 100px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+/* Media Queries pour mobiles et ipad */
+@media (min-width: 320px) and (max-width: 1023px) { 
+    
+h1{
+    font-size: 40px;
+}
+
+form {
+    width: 90%; 
+}
+
+.rowRegister {
+    width: 350px;
+}
+
+.custom-btn {
+    width: 150px;
+}
+
+.espace {
+   height: 50px;
+}
+}
+
+</style>
+
+
+<h1>Inscription</h1>
+<section class="espace"></section>
+
+  <section class="containerRegister my-5">
+    <div class="rowRegister">
+      <div class="col">
+        {% for flash_error in app.flashes('verify_email_error') %}
+          <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+
+          {{ form_errors(registrationForm) }} 
+          {{ form_start(registrationForm) }}
+          {{ form_row(registrationForm.lastname, {'label': 'Nom'}) }}
+          {{ form_row(registrationForm.firstname, {'label': 'Prénom'}) }}
+          {{ form_row(registrationForm.address, {'label': 'Adresse'}) }}
+          {{ form_row(registrationForm.postalCode, {'label': 'Code Postal'}) }}
+          {{ form_row(registrationForm.city, {'label': 'Ville'}) }}
+          {{ form_row(registrationForm.country, {'label': 'Pays'}) }}
+          {{ form_row(registrationForm.phone, {'label': 'Téléphone'}) }}
+          {{ form_row(registrationForm.email, {'label': 'Email'}) }}
+          {{ form_row(registrationForm.password, {'label': 'Mot de Passe'}) }}
+          {{ form_row(registrationForm.agreeTerms, {'label': 'C.G.V'}) }}
+             <a href="{{ path('app_c_g_v') }}">Voir les Conditions Générales de Vente</a>
+<br><br>
+                <button class="btn btn-lg btn-dark mt-3 custom-btn" type="submit">S'inscrire</button>
+        {{ form_end(registrationForm) }}
+      </div>
+    </div>
+  </section>
+    
+
+<section class="espace2"></section>
+
+{% endblock %}

@@ -1,0 +1,280 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier!{% endblock %}
+
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.containerPanier {
+    display: flex;
+    justify-content: center;
+} 
+
+.rowPanier {
+    border: solid black 10px;
+    height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tr {
+  font-size: 30px;
+}
+
+.card-img-top { /* taille de l'image de ma cards dans le panier */
+   height: auto; 
+   width: 150px; 
+}
+
+.section-margin {
+   margin-bottom: 0; 
+}
+
+blockquote {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.hr-black {
+   border: none; 
+   height: 1px; 
+   background-color: black; 
+   max-width: 80%; 
+   margin: 10px auto;
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 15px auto;
+    height: 40px; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}       
+
+label {
+color: black;
+}
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+.espace {
+  height: 100px;   
+}
+
+.espace2 {
+  height: 150px;   
+}
+
+/* Media Queries pour mobiles */
+@media (min-width: 320px) and (max-width: 932px) {
+
+h1 {
+   font-size: 35px; 
+}
+
+h6{
+  font-size: 20px;
+}
+
+.rowPanier {
+    width: 380px;
+    height: auto;
+}
+
+th {
+    font-size: 8px; /* taille des titres de mon tableau */
+}
+
+td {
+    font-size: 7px; /* taille du contenu de mon tableau */
+}
+
+.card-img-top {   
+   font-size: 12px; /* taille de l'image de ma cards dans le panier */
+   height: auto; 
+   width: 30px; 
+}
+
+.custom-btn { 
+    width: 155px;
+    font-size: 10px;
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+
+/* Media Queries pour tablettes */
+@media (min-width: 1024px) and (max-width: 1036px) {
+
+td {
+    font-size: 24px; /* taille des titres de mon tableau */
+}
+}
+
+</style>
+
+
+<h1>Panier</h1>
+<section class="espace"></section>
+
+    <section class="containerPanier">
+        <form action="{{ path('app_panier') }}" method="post">
+            <section class="rowPanier">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Produit</th>
+                                <th>Titre</th>
+                                <th>Prix</th>
+                                <th>Quantité</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in data %}
+                                <tr>
+                                    <td><img class="card-img-top" src="{{ asset('images/produits/' ~ item.produit.image) }}"></td>
+                                    <td>{{ item.produit.title }}</td>
+                                    <td>{{ item.produit.subtitle }}</td>
+                                    <td style="color: green;">{{ item.produit.price }} €</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.quantity * item.produit.price }} €</td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="{{ path('app_panier_id', {'id': item.produit.id}) }}" class="btn btn-success">+</a>
+                                                <a href="{{ path('app_panier_remove_id', {'id': item.produit.id}) }}" class="btn btn-warning">-</a>
+                                            </div>
+                                            <div class="col">
+                                                <form action="{{ path('app_panier_delete_id', {'id': item.produit.id}) }}" method="post">
+                                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {# une petite condition quand mon panier est vide #}
+                            {% else %}  
+                                <tr>
+                                    <td colspan="7">Votre panier est vide</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5"></td>
+                                <td>{{ total }} €</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                <br>
+                            <br><p>Si vous n'avez pas de compte, <a href="{{ path('app_register')}}">inscrivez-vous</a> ou  <a href="{{ path('app_login')}}">connectez-vous</a>  dans notre espace utilisateur pour voir la commande.</p><br>
+                            <div class="col-12">
+                                <a href="{{ path('app_order') }}" class="custom-btn">VOIR LA COMMANDE</a> 
+                                {# pour voir la commande j'ai mis une conditon dans mon controllerOrder pour voir la commande il faut etre inscrit ou s'inscrire #}
+                            </div>
+            </section>
+        </form>
+    </section>
+
+<section class="espace2"></section>
+<hr class="hr-black"/>
+
+    <div class="livraison">
+        <div class="envoi">
+            <h6>LIVRAISON</h6>
+                <p class="jour">Toutes les commandes sont expédiées <br> entre 2 à 4 jours.</p>
+                  <i class="fa fa-truck fa-lg"></i>
+        </div>
+        <div class="stripe">
+            <h6>PAIEMENT</h6>
+                <p class="jour">Nous acceptons tous les paiements <br> par carte.</p>
+                  <i class="fa fa-credit-card fa-lg"></i>
+        </div>
+            <div class="stripe">
+            <h6>RETOUR</h6>
+                <p class="jour">Vous avez jusqu'à 14 jours <br> pour faire un retour. </p>
+                   <i class="fa fa-arrow-left fa-lg"></i>
+        </div>
+    </div>
+
+<br>
+<hr class="hr-black"/><br><br>
+
+    <div class"connection">
+        <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.<br> 
+    Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.<br> 
+    L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+        </blockquote><br>
+            <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+    </div>
+
+<section class="espace"></section>
+
+
+{% endblock %}

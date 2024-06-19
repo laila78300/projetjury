@@ -1,0 +1,302 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir tous les Produits{% endblock %}
+
+{% block body %}
+
+<style>
+
+h1 {
+   font-family: cursive;
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   font-size: 60px;
+   padding-top: 40px;
+   color: black;
+   letter-spacing: 2px;
+   text-decoration: underline;
+}
+
+h2 {
+   color: #000000; 
+   font: 18px/1.5 sans-serif; 
+   font-family: cursive; 
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 55px;
+   color: black; 
+   padding-top: 40px;
+   text-decoration: underline;
+}
+
+h3 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-size: 20px;
+  color: black;
+  text-decoration: underline;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.containerShowProduits { 
+    display: flex;
+    justify-content: center;
+}
+
+.rowShowProduits {
+  display: flex;
+  width: 550px;
+  height: auto;
+  padding: 10px;
+  border: solid black 5px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.col-lg-8 { /* c'est la ou se trouve l'image principal et les 3 petites en dessous sa centre et align par au reste de Cards*/
+    display: flex;
+    justify-content: center;
+    width: 350px;
+}
+
+.card img {  /* l'image principale de ma cards */
+    width: 450px;
+}
+
+.card-title { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 30px;
+}
+
+.card-text-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black; 
+    font-size: 25px; 
+}
+
+.card-text-price-pro {
+  font-weight: bold; 
+  font-size: 30px; 
+  text-align: center;
+}
+
+.card-text {
+    color: black; 
+    font-size: 16px; 
+}
+
+.custom-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 300px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 15px auto;
+    height: 40px; 
+}
+
+.custom-btn:hover {
+    background-color: #CDC093;
+    border-color: black; 
+    color: black; 
+}
+
+.hr-black { /* c'est le trait en haut et en dessous de mes icons de livraison paiement et retour*/
+  color:black;
+  border-bottom: 2px solid black;
+}
+
+.livraison {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stripe, .envoi, .livraison {
+  text-align: center;
+  font-weight: bold;
+  font-size:60px;
+  color: black;
+}
+
+.jour {
+  text-align: center;
+  font-size:18px;
+}
+
+blockquote {
+color: #000000; 
+font: 18px/1.5 sans-serif; 
+font-family: cursive; 
+text-align: center;
+display: flex;
+justify-content: center;
+}
+
+.espace {
+   height: 100px;
+}
+
+.espace2 {
+   height: 150px;
+}
+
+
+/* Media query pour les mobiles */
+@media (min-width: 320px) and (max-width: 932px){
+
+h1 {
+  font-size: 25px; 
+}
+
+h2 {
+  font-size: 22px; 
+}
+
+.card img {
+    width: 250px;
+}
+
+.rowShowProduits{
+   width: 350px;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   font-size: 12px;
+   padding: 0;
+}
+
+h6{
+  font-size: 20px;
+}
+
+.btn {
+    width: auto;
+}
+
+.jour {
+  font-size: 10px;
+}
+}
+
+/* Media query pour les tablettes */
+@media (min-width: 1024px) and (max-width: 1366px){
+
+.rowShowProduits {
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   font-size: 12px;
+   padding: 0;
+}
+}
+
+</style>
+
+
+<h1> Détail du Produit</h1>
+  <section class="espace2"></section>
+
+      <div class="containerShowProduits">
+        <div class="rowShowProduits">
+
+          <div class="col-lg-8 mx-auto d-flex flex-row">
+            <div class="card product-card border p-3 flex-shrink-0">
+              <img src="{{ asset('images/produits/' ~ produit.image) }}" class="card-img-top border p-3" alt="{{ produit.title }}">
+            </div>       
+          </div>
+
+      <div class="card-body p-5">
+        <div class="rowCards"> 
+      
+          <div class="col-lg-12">
+            <h5 class="card-title">{{ produit.title }}</h5>
+              <p class="card-text-subtitle">( {{ produit.subtitle }} )</p><br>
+          </div>
+
+          <div class="col-lg-12">
+              <p class="card-text-price-pro">{{ produit.price }} €</p>
+              <hr class="m-0 p-0">
+          </div>
+          <br> 
+
+        <div class="col-lg-12 pt-2">
+            <div class="description-wrapper">
+                <p class="tag-section"><strong>Description : </strong></p> 
+                <p class="card-text">{{ produit.description|striptags }}</p>
+            </div>
+            <br>
+          <div class="col-lg-12">
+            <p class="tag-section"><strong>Catégorie : </strong><a href="">{{ produit.Category.name }}</a></p>
+            <p class="tag-section"><strong>Quantité : 1 </strong></p>
+          </div>
+
+        <div class="rowCards">
+          <div class="col-lg-6 pb-2">
+            <a href="{{ path('app_panier_id', {'id': produit.id}) }}" class="btn btn-primary custom-btn">Ajouter au panier</a>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      </div>
+
+        </div>
+      </div>
+
+<section class="espace2"></section>
+<hr class="hr-black"/><br>
+
+  <div class="livraison">
+      <div class="envoi">
+          <h6>LIVRAISON</h6>
+            <p class="jour">Toutes les commandes sont expédiées <br> entre 2 à 4 jours.</p>
+            <i class="fa fa-truck fa-lg"></i>
+      </div>
+      <div class="stripe">
+          <h6>PAIEMENT</h6>
+            <p class="jour">Nous acceptons tous les paiements <br> par carte.</p>
+              <i class="fa fa-credit-card fa-lg"></i>
+      </div>
+          <div class="stripe">
+            <h6>RETOUR</h6>
+            <p class="jour">Vous avez jusqu'à 14 jours <br> pour faire un retour. </p>
+              <i class="fa fa-arrow-left fa-lg"></i>
+      </div>
+  </div>
+<br>
+
+<hr class="hr-black"/><br><br> 
+
+  <div class"connection">
+    <blockquote>Inscris-toi dès maintenant pour bénéficier de promotions exclusives et de codes de réduction réservés aux utilisateurs inscrits.<br> 
+    Ne manque pas cette opportunité de faire des économies et de découvrir des produits incroyables.<br> 
+    L'inscription est rapide, gratuite et te donne accès à un monde de privilèges.
+    </blockquote><br>
+        <a href="{{ path('app_register')}}" class="btn btn-primary custom-btn">S'INSCRIRE</a>
+  </div>
+
+<section class="espace2"></section>
+
+
+{% endblock %}
