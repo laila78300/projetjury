@@ -20,16 +20,22 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
+
+
           if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+
+            echo '<pre>';
+            var_dump($data);
+            echo '</pre>';
 
             $content = $data['content'];
 
             // Adresse e-mail de l'expéditeur
-            $fromEmail = 'c3f846@inbox.mailtrap.io'; 
+            $fromEmail = 'vera78ds@gmail.com'; 
 
             // Adresse e-mail du destinataire (Mailtrap)
-            $toEmail = 'to@example.com'; 
+            $toEmail = 'sayfana78@gmail.com'; 
 
             $email = (new Email())
                 ->from($fromEmail)
